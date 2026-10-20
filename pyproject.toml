@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "issue-pilot"
+version = "0.1.0"
+description = "Privacy-first AI-ready CLI & engine to discover, score, and triage open-source contribution opportunities."
+readme = "README.md"
+authors = [
+    { name = "IssuePilot Contributors" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Bug Tracking",
+    "Topic :: Software Development :: Version Control :: Git",
+]
+dependencies = [
+    "httpx>=0.27.0",
+    "rich>=13.0.0",
+    "pydantic>=2.5.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+issue-pilot = "issue_pilot.cli:main"
